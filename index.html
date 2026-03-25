@@ -5,86 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MYT Enterprises, LLC — Auctions · Livestock · Construction</title>
 
-  <!-- ✦ META: Add your own description below -->
   <meta name="description" content="MYT Enterprises, LLC offers auction services, livestock sales, and construction in central Colorado. Honest work, rooted in the land." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.mytenterprisesinc.com/" />
-
-  <!-- ✦ OPEN GRAPH (controls how AI engines, social, and link previews read your site) -->
+  <link rel="canonical" href="https://www.mytauctions.com/" />
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://www.mytenterprisesinc.com/" />
+  <meta property="og:url"         content="https://www.mytauctions.com/" />
   <meta property="og:title"       content="MYT Enterprises, LLC — Auctions · Livestock · Construction" />
   <meta property="og:description" content="MYT Enterprises, LLC offers auction services, livestock sales, and construction in central Colorado. Honest work, rooted in the land." />
   <meta property="og:site_name"   content="MYT Enterprises, LLC" />
   <meta property="og:locale"      content="en_US" />
 
-  <!-- ✦ SCHEMA.ORG JSON-LD — structured data for AI engines and search -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": ["LocalBusiness", "GeneralContractor"],
-        "@id": "https://www.mytenterprisesinc.com/#business",
+        "@id": "https://www.mytauctions.com/#business",
         "name": "MYT Enterprises, LLC",
-        "url": "https://www.mytenterprisesinc.com/",
-        "logo": "https://www.mytenterprisesinc.com/logo.png",
+        "url": "https://www.mytauctions.com/",
         "description": "MYT Enterprises, LLC is a multi-faceted agricultural and construction operation based in Colorado, offering auction services, livestock sales, and construction projects.",
         "telephone": "+17193304280",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "CO",
-          "addressCountry": "US"
-        },
-        "areaServed": {
-          "@type": "State",
-          "name": "Colorado"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "MYT Enterprises Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Auction Services",
-                "url": "https://www.mytenterprisesinc.com/auctions.html",
-                "description": "Farm equipment, estate sales, and regional auction events run with transparency and expertise."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Livestock Sales",
-                "url": "https://www.mytenterprisesinc.com/livestock.html",
-                "description": "Quality cattle and livestock raised and handled with care in Colorado."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Construction Services",
-                "url": "https://www.mytenterprisesinc.com/construction.html",
-                "description": "Agricultural and general construction including pole barns, site prep, and project builds."
-              }
-            }
-          ]
-        },
-        "sameAs": [
-          "https://www.mytenterprisesinc.com/"
-        ]
+        "address": { "@type": "PostalAddress", "addressRegion": "CO", "addressCountry": "US" },
+        "areaServed": { "@type": "State", "name": "Colorado" }
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.mytenterprisesinc.com/#website",
-        "url": "https://www.mytenterprisesinc.com/",
+        "@id": "https://www.mytauctions.com/#website",
+        "url": "https://www.mytauctions.com/",
         "name": "MYT Enterprises, LLC",
-        "publisher": {
-          "@id": "https://www.mytenterprisesinc.com/#business"
-        }
+        "publisher": { "@id": "https://www.mytauctions.com/#business" }
       }
     ]
   }
@@ -93,7 +43,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
+    /* ── Variables ── */
     :root {
       --soil:      #2C1A0E;
       --bark:      #4A2C17;
@@ -110,126 +62,747 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background-color: var(--cream); color: var(--soil); font-family: var(--font-body); font-size: 17px; line-height: 1.75; }
+    body { background: var(--cream); color: var(--soil); font-family: var(--font-body); font-size: 17px; line-height: 1.75; }
     img  { max-width: 100%; display: block; }
     a    { color: var(--rust); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* NAV */
-    .site-nav { background-color: var(--soil); border-bottom: 4px solid var(--tan); position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
-    .nav-logo  { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--straw); text-decoration: none; }
-    .nav-logo span { color: var(--tan); }
-    .nav-links { list-style: none; display: flex; gap: .25rem; }
-    .nav-links a { font-family: var(--font-label); font-size: .85rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--straw); padding: .5rem 1rem; border-radius: 2px; transition: background .2s, color .2s; text-decoration: none; }
-    .nav-links a:hover, .nav-links a.active { background: var(--bark); color: var(--tan); }
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .nav-toggle span { display: block; width: 26px; height: 2px; background: var(--straw); border-radius: 2px; }
-    @media (max-width: 700px) {
+    /* ── NAV ── */
+    .site-nav {
+      background-color: var(--soil);
+      border-bottom: 3px solid var(--tan);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--straw);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+    .nav-logo-text span { color: var(--tan); }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 0.15rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: var(--font-label);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(232,213,163,0.75);
+      padding: 0.45rem 0.85rem;
+      border-radius: 2px;
+      transition: background 0.18s, color 0.18s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(196,154,108,0.15);
+      color: var(--tan);
+    }
+    .nav-links a.active { border-bottom: 2px solid var(--rust); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: 1px solid rgba(196,154,108,0.3);
+      border-radius: 3px;
+      padding: 7px 9px;
+      transition: border-color 0.2s;
+    }
+    .nav-toggle:hover { border-color: var(--tan); }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--straw);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 720px) {
       .nav-toggle { display: flex; }
-      .nav-links  { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--soil); padding: 1rem 2rem 1.5rem; border-bottom: 3px solid var(--tan); gap: .15rem; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--soil);
+        border-bottom: 3px solid var(--tan);
+        padding: 0.75rem 0 1rem;
+      }
       .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.7rem 1.5rem;
+        border-radius: 0;
+        font-size: 0.85rem;
+        color: var(--straw);
+      }
+      .nav-links a.active {
+        border-bottom: none;
+        border-left: 3px solid var(--rust);
+        padding-left: calc(1.5rem - 3px);
+        color: var(--tan);
+        background: rgba(196,154,108,0.08);
+      }
     }
 
-    /* HERO */
-    .hero { background-color: var(--soil); background-image: radial-gradient(ellipse at 70% 40%, rgba(122,74,45,.45) 0%, transparent 65%), repeating-linear-gradient(-45deg, transparent, transparent 28px, rgba(255,255,255,.015) 28px, rgba(255,255,255,.015) 29px); min-height: 88vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 5rem 2rem; }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px; background: repeating-linear-gradient(90deg, var(--rust) 0px, var(--rust) 20px, var(--tan) 20px, var(--tan) 40px); }
-    .hero-bg-letter { position: absolute; right: -.05em; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: clamp(16rem, 28vw, 34rem); font-weight: 900; color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; user-select: none; }
-    .hero-content { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
-    .hero-eyebrow { font-family: var(--font-label); font-size: .8rem; font-weight: 600; letter-spacing: .25em; text-transform: uppercase; color: var(--tan); margin-bottom: 1.25rem; display: flex; align-items: center; gap: .75rem; animation: fadeUp .6s ease both; }
-    .hero-eyebrow::before { content: ''; display: inline-block; width: 40px; height: 2px; background: var(--rust); }
-    .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 900; color: var(--straw); line-height: 1.0; margin-bottom: .15em; animation: fadeUp .7s .1s ease both; }
-    .hero h1 em { font-style: normal; color: var(--tan); }
-    .hero-tagline { font-family: var(--font-body); font-size: clamp(1rem, 2vw, 1.2rem); font-style: italic; color: var(--straw); opacity: .75; margin: 1.5rem 0 2.25rem; max-width: 480px; line-height: 1.6; animation: fadeUp .7s .2s ease both; }
-    .hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp .7s .3s ease both; }
-    .btn-hero { font-family: var(--font-label); font-size: .85rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--cream); background: var(--rust); padding: .85rem 2rem; border-radius: 2px; text-decoration: none; border: 2px solid var(--rust); transition: background .2s, border-color .2s; }
-    .btn-hero:hover { background: var(--bark); border-color: var(--tan); text-decoration: none; }
-    .btn-hero-ghost { background: transparent; border: 2px solid rgba(196,154,108,.5); color: var(--straw); }
-    .btn-hero-ghost:hover { border-color: var(--tan); background: rgba(196,154,108,.1); }
+    /* ── HERO ── */
+    .hero {
+      background-color: var(--soil);
+      background-image:
+        radial-gradient(ellipse 80% 60% at 75% 50%, rgba(122,74,45,0.5) 0%, transparent 70%),
+        repeating-linear-gradient(-45deg, transparent, transparent 28px, rgba(255,255,255,0.012) 28px, rgba(255,255,255,0.012) 29px);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 1.5rem 6rem;
+    }
 
-    /* STRIPE */
-    .brand-stripe { height: 6px; background: repeating-linear-gradient(90deg, var(--rust) 0px, var(--rust) 20px, var(--tan) 20px, var(--tan) 40px); }
+    /* Bottom stripe accent */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: repeating-linear-gradient(90deg, var(--rust) 0, var(--rust) 18px, var(--tan) 18px, var(--tan) 36px);
+    }
 
-    /* LAYOUT */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
-    section { padding: 4rem 0; }
-    .section-label { font-family: var(--font-label); font-size: .78rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; }
-    .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--soil); line-height: 1.15; margin-bottom: 1rem; }
-    .section-sub   { font-size: 1rem; color: var(--iron); max-width: 560px; line-height: 1.7; }
+    /* Large decorative letter */
+    .hero-bg-letter {
+      position: absolute;
+      right: -0.08em;
+      top: 50%;
+      transform: translateY(-52%);
+      font-family: var(--font-display);
+      font-size: clamp(14rem, 26vw, 32rem);
+      font-weight: 900;
+      color: rgba(255,255,255,0.022);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
 
-    /* PILLAR CARDS */
+    /* Vertical rule accent */
+    .hero-rule {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(196,154,108,0.08) 30%, rgba(196,154,108,0.08) 70%, transparent);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--rust);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      font-weight: 900;
+      color: var(--straw);
+      line-height: 0.95;
+      margin-bottom: 0.15em;
+      animation: fadeUp 0.65s 0.08s ease both;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--tan);
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: rgba(232,213,163,0.7);
+      margin: 1.75rem 0 2.5rem;
+      max-width: 420px;
+      line-height: 1.65;
+      animation: fadeUp 0.65s 0.16s ease both;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.65s 0.24s ease both;
+    }
+
+    .btn-hero {
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--rust);
+      padding: 0.85rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      border: 2px solid var(--rust);
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-hero:hover {
+      background: #8a3818;
+      border-color: #8a3818;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .btn-hero-ghost {
+      background: transparent;
+      border: 2px solid rgba(196,154,108,0.4);
+      color: var(--straw);
+    }
+    .btn-hero-ghost:hover {
+      border-color: var(--tan);
+      background: rgba(196,154,108,0.08);
+      transform: translateY(-1px);
+    }
+
+    /* Stats row inside hero */
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.65s 0.32s ease both;
+    }
+    .hero-stat {
+      border-left: 2px solid rgba(160,67,31,0.6);
+      padding-left: 1rem;
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--straw);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-top: 0.2rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 85vh;
+        padding: 4rem 1.25rem 5rem;
+        align-items: flex-start;
+        padding-top: 3.5rem;
+      }
+      .hero h1 { font-size: clamp(2.8rem, 14vw, 4.5rem); }
+      .hero-bg-letter { display: none; }
+      .hero-stats { gap: 1.5rem; margin-top: 3rem; }
+    }
+
+    /* ── BRAND STRIPE ── */
+    .brand-stripe {
+      height: 5px;
+      background: repeating-linear-gradient(90deg, var(--rust) 0, var(--rust) 18px, var(--tan) 18px, var(--tan) 36px);
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    section { padding: 4.5rem 0; }
+    .section-label {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      color: var(--soil);
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    .section-sub {
+      font-size: 0.97rem;
+      color: var(--iron);
+      max-width: 540px;
+      line-height: 1.75;
+    }
+
+    /* ── PILLAR CARDS ── */
     .pillars { background: var(--parchment); padding: 5rem 0; }
-    .pillar-card { background: var(--cream); border: 1px solid rgba(196,154,108,.4); border-top: 5px solid var(--rust); border-radius: 3px; padding: 2.25rem 2rem; text-align: center; transition: transform .25s, box-shadow .25s; position: relative; overflow: hidden; }
-    .pillar-card::before { content: attr(data-icon); position: absolute; bottom: -.15em; right: .1em; font-size: 6rem; opacity: .06; line-height: 1; pointer-events: none; }
-    .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(44,26,14,.14); }
-    .pillar-icon { font-size: 2.5rem; margin-bottom: 1rem; display: flex; justify-content: center; align-items: center; min-height: 64px; }
-    .pillar-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--soil); margin-bottom: .75rem; }
-    .pillar-card p  { font-size: .92rem; color: var(--iron); line-height: 1.7; margin-bottom: 1.25rem; }
+    .pillar-card {
+      background: var(--cream);
+      border: 1px solid rgba(196,154,108,0.35);
+      border-top: 4px solid var(--rust);
+      border-radius: 3px;
+      padding: 2.25rem 1.75rem;
+      text-align: center;
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar-card::before {
+      content: attr(data-icon);
+      position: absolute;
+      bottom: -0.2em;
+      right: 0.05em;
+      font-size: 5.5rem;
+      opacity: 0.055;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(44,26,14,0.13); }
+    .pillar-icon {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+    }
+    .pillar-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--soil);
+      margin-bottom: 0.65rem;
+    }
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: var(--iron);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
 
-    /* BUTTONS */
-    .btn { display: inline-block; font-family: var(--font-label); font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--cream); background: var(--rust); padding: .6rem 1.4rem; border-radius: 2px; margin-top: 1rem; transition: background .2s; text-decoration: none; }
-    .btn:hover { background: var(--soil); text-decoration: none; }
-    .btn-outline { background: transparent; color: var(--rust); border: 2px solid var(--rust); }
-    .btn-outline:hover { background: var(--rust); color: var(--cream); }
-
-    /* ABOUT */
-    .about-band { background: var(--bark); padding: 5rem 0; position: relative; overflow: hidden; }
-    .about-band::before { content: 'MYT'; position: absolute; right: -.1em; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: 18rem; font-weight: 900; color: rgba(255,255,255,.03); pointer-events: none; line-height: 1; }
+    /* ── ABOUT BAND ── */
+    .about-band {
+      background: var(--bark);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-band::before {
+      content: 'MYT';
+      position: absolute;
+      right: -0.1em;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: clamp(8rem, 20vw, 18rem);
+      font-weight: 900;
+      color: rgba(255,255,255,0.028);
+      pointer-events: none;
+      line-height: 1;
+    }
     .about-inner { max-width: 700px; }
     .about-band .section-label { color: var(--tan); }
     .about-band .section-title { color: var(--straw); }
-    .about-band p { color: rgba(232,213,163,.85); line-height: 1.8; margin-bottom: 1rem; font-size: 1rem; }
-    .stats-row { display: flex; gap: 2.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
-    .stat { border-left: 3px solid var(--rust); padding-left: 1rem; }
-    .stat-num   { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: var(--straw); line-height: 1; }
-    .stat-label { font-family: var(--font-label); font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--tan); margin-top: .2rem; }
+    .about-band p {
+      color: rgba(232,213,163,0.8);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .about-band a { color: var(--tan); }
+    .about-band a:hover { color: var(--straw); }
+    .stats-row {
+      display: flex;
+      gap: 2.25rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat {
+      border-left: 3px solid var(--rust);
+      padding-left: 0.9rem;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--straw);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-top: 0.2rem;
+    }
 
-    /* CARDS */
-    .card { background: var(--parchment); border: 1px solid var(--tan); border-top: 4px solid var(--rust); border-radius: 3px; padding: 1.75rem; transition: transform .2s, box-shadow .2s; }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,26,14,.15); }
-    .card-tag  { font-family: var(--font-label); font-size: .72rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; }
-    .card h3   { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--soil); margin-bottom: .5rem; line-height: 1.3; }
-    .card p    { font-size: .9rem; color: var(--iron); line-height: 1.65; }
-    .card-meta { font-family: var(--font-label); font-size: .75rem; letter-spacing: .08em; color: var(--saddle); margin-top: 1rem; padding-top: .75rem; border-top: 1px solid var(--tan); }
+    /* ── CARDS ── */
+    .card {
+      background: var(--parchment);
+      border: 1px solid rgba(196,154,108,0.45);
+      border-top: 4px solid var(--rust);
+      border-radius: 3px;
+      padding: 1.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,26,14,0.13); }
+    .card-tag {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--soil);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .card p { font-size: 0.88rem; color: var(--iron); line-height: 1.65; }
+    .card-meta {
+      font-family: var(--font-label);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--saddle);
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(196,154,108,0.4);
+    }
 
-    /* SECONDARY SITE BAND */
-    .sister-band { background: var(--parchment); border-top: 3px solid var(--tan); border-bottom: 3px solid var(--tan); padding: 2.5rem 2rem; text-align: center; }
-    .sister-band p.section-label { margin-bottom: .4rem; }
-    .sister-band h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--soil); margin-bottom: .5rem; }
-    .sister-band p.sub { font-size: .95rem; color: var(--iron); max-width: 500px; margin: 0 auto .75rem; }
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-label);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--rust);
+      padding: 0.6rem 1.35rem;
+      border-radius: 2px;
+      margin-top: 1rem;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--soil); transform: translateY(-1px); text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      color: var(--rust);
+      border: 1.5px solid var(--rust);
+    }
+    .btn-outline:hover { background: var(--rust); color: var(--cream); }
 
-    /* CONTACT */
-    .contact-band { background: var(--soil); padding: 4rem 2rem; text-align: center; }
-    .contact-band h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: var(--straw); margin-bottom: .75rem; }
-    .contact-band > p { color: var(--tan); font-family: var(--font-label); letter-spacing: .05em; font-size: .95rem; margin-bottom: 1.75rem; }
-    .contact-details { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-top: 2rem; }
-    .contact-item { font-family: var(--font-label); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--iron); }
-    .contact-item strong { display: block; color: var(--straw); font-size: 1rem; letter-spacing: .05em; margin-top: .2rem; }
+    /* ── SISTER BAND ── */
+    .sister-band {
+      background: var(--parchment);
+      border-top: 3px solid var(--tan);
+      border-bottom: 3px solid var(--tan);
+      padding: 2.75rem 1.5rem;
+      text-align: center;
+    }
+    .sister-band .section-label { margin-bottom: 0.4rem; }
+    .sister-band h2 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--soil);
+      margin-bottom: 0.5rem;
+    }
+    .sister-band p.sub {
+      font-size: 0.92rem;
+      color: var(--iron);
+      max-width: 480px;
+      margin: 0 auto 1rem;
+      line-height: 1.7;
+    }
 
-    /* FOOTER */
-    .site-footer { background: var(--soil); color: var(--straw); text-align: center; padding: 2.5rem 2rem; border-top: 4px solid var(--tan); }
-    .site-footer p { font-family: var(--font-label); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--iron); margin-top: .35rem; }
-    .footer-logo  { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--straw); margin-bottom: .5rem; }
-    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
-    .footer-links a { font-family: var(--font-label); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tan); text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: var(--straw); }
-    .footer-sister { margin-top: 1rem; font-family: var(--font-label); font-size: .78rem; color: var(--iron); }
-    .footer-sister a { color: var(--tan); }
-    .footer-sister a:hover { color: var(--straw); }
+    /* ── CONTACT BAND ── */
+    .contact-band {
+      background: var(--soil);
+      padding: 4.5rem 1.5rem;
+      text-align: center;
+    }
+    .contact-band h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      color: var(--straw);
+      margin-bottom: 0.75rem;
+    }
+    .contact-band > p {
+      color: rgba(196,154,108,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--iron);
+    }
+    .contact-item strong {
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+    .contact-item a { color: var(--straw); text-decoration: none; transition: color 0.18s; }
+    .contact-item a:hover { color: var(--tan); }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--soil);
+      border-top: 3px solid var(--tan);
+      padding: 3.5rem 1.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      text-decoration: none;
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--straw);
+    }
+    .footer-tagline {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--iron);
+      margin-bottom: 1rem;
+    }
+    .footer-contact-item {
+      display: block;
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--tan);
+      text-decoration: none;
+      margin-bottom: 0.3rem;
+      transition: color 0.18s;
+    }
+    .footer-contact-item:hover { color: var(--straw); }
+    .footer-contact-static { color: var(--iron); cursor: default; }
+
+    .footer-nav { text-align: center; }
+    .footer-nav-label {
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--iron);
+      margin-bottom: 0.85rem;
+    }
+    .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.2rem; align-items: center; }
+    .footer-nav a {
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(232,213,163,0.6);
+      text-decoration: none;
+      transition: color 0.18s;
+      padding: 0.15rem 0;
+    }
+    .footer-nav a:hover { color: var(--tan); }
+
+    .footer-right { text-align: right; }
+    .footer-sister-label {
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--iron);
+      margin-bottom: 0.5rem;
+    }
+    .footer-sister-link {
+      display: inline-block;
+      font-family: var(--font-label);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--tan);
+      text-decoration: none;
+      transition: color 0.18s;
+      margin-bottom: 1.5rem;
+    }
+    .footer-sister-link:hover { color: var(--straw); }
+    .footer-legal {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--iron);
+      line-height: 2;
+    }
+
+    .footer-divider {
+      max-width: 1100px;
+      margin: 1.75rem auto 0;
+      border: none;
+      border-top: 1px solid rgba(196,154,108,0.18);
+    }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 1rem auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-bottom p {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--iron);
+    }
+    .footer-bottom-divs {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .footer-bottom-divs span {
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(107,91,78,0.55);
+    }
+
+    @media (max-width: 720px) {
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand-logo { justify-content: center; }
+      .footer-right { text-align: center; }
+      .footer-bottom { justify-content: center; text-align: center; }
+      .footer-bottom-divs { justify-content: center; }
+      .footer-contact-item { text-align: center; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
 
+  <!-- ── NAV ── -->
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a class="nav-logo" href="index.html" style="display:flex;align-items:center;gap:0.6rem;text-decoration:none;"><svg width="52" height="26" viewBox="0 0 78 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M56 8 L74 8 M65 8 L65 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span style="font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--straw);">Enterprises</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <a class="nav-logo" href="index.html" aria-label="MYT Enterprises home" style="flex-direction:column;gap:3px;">
+        <svg width="48" height="24" viewBox="0 0 78 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M56 8 L74 8 M65 8 L65 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span style="font-family:var(--font-label);font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--tan);line-height:1;">Enterprises</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links" id="navLinks" role="list">
         <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="auctions.html">Auctions</a></li>
@@ -241,21 +814,38 @@
 
   <main>
 
+    <!-- ── HERO ── -->
     <section class="hero" aria-label="Hero">
       <div class="hero-bg-letter" aria-hidden="true">M</div>
+      <div class="hero-rule" aria-hidden="true"></div>
       <div class="hero-content">
-        <div class="hero-eyebrow">MYT Enterprises, LLC · Colorado</div>
+        <div class="hero-eyebrow">MYT Enterprises, LLC &nbsp;·&nbsp; Colorado</div>
         <h1>Built on<br><em>Grit &amp;</em><br>Hard Work.</h1>
         <p class="hero-tagline">Auctions, livestock, and construction services you can count on — rooted in the land and built to last.</p>
         <div class="hero-cta-row">
-          <a href="auctions.html" class="btn-hero">View Auctions</a>
+          <a href="https://www.mytauctions.com" class="btn-hero" target="_blank" rel="me">View Auctions</a>
           <a href="#services" class="btn-hero btn-hero-ghost">Our Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">3</div>
+            <div class="hero-stat-label">Divisions</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Hands-On</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">CO</div>
+            <div class="hero-stat-label">Rooted Here</div>
+          </div>
         </div>
       </div>
     </section>
 
     <div class="brand-stripe" aria-hidden="true"></div>
 
+    <!-- ── SERVICES / PILLARS ── -->
     <section class="pillars" id="services" aria-labelledby="services-heading">
       <div class="container">
         <div style="text-align:center; margin-bottom:3rem;">
@@ -264,9 +854,9 @@
           <p class="section-sub" style="margin:0 auto;">Whether you're buying at auction, sourcing quality livestock, or breaking ground on a new build — MYT Enterprises has the experience and drive to get it done right.</p>
         </div>
         <div class="grid-3">
-          <article class="pillar-card" data-icon="">
+          <article class="pillar-card" data-icon="🔨">
             <span class="pillar-icon" aria-hidden="true">
-              <svg width="80" height="72" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="76" height="68" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g transform="translate(18,8) rotate(-28,60,60)">
                   <rect x="6"  y="51" width="72" height="18" rx="9"  fill="#A0561E"/>
                   <ellipse cx="10" cy="60" rx="11" ry="9" fill="#7B3D10"/>
@@ -299,6 +889,7 @@
       </div>
     </section>
 
+    <!-- ── ABOUT BAND ── -->
     <section class="about-band" aria-labelledby="about-heading">
       <div class="container">
         <div class="about-inner">
@@ -306,7 +897,7 @@
           <h2 class="section-title" id="about-heading">Who We Are</h2>
           <p>MYT Enterprises, LLC is a multi-faceted operation rooted in hard work, integrity, and a deep respect for the land and the people we serve. We've built our reputation one handshake at a time — in the auction ring, out in the pasture, and on the job site — right here in Colorado.</p>
           <p>This site is your window into what we're doing day to day. Browse auction listings, follow our livestock updates, and track our construction projects — all in one place.</p>
-          <p>Want to go deeper? Visit our sister site at <a href="https://www.mytenterprisesinc.com" style="color:var(--tan);" rel="me">mytenterprisesinc.com</a> for more.</p>
+          <p>Want to go deeper? Visit our sister site at <a href="https://www.mytauctions.com" rel="me" style="font-family:var(--font-label);font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;">mytauctions.com</a> for more.</p>
           <div class="stats-row">
             <div class="stat"><div class="stat-num">3</div><div class="stat-label">Divisions</div></div>
             <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Hands-On</div></div>
@@ -316,17 +907,18 @@
       </div>
     </section>
 
-    <section class="latest" aria-labelledby="latest-heading">
+    <!-- ── LATEST UPDATES ── -->
+    <section aria-labelledby="latest-heading">
       <div class="container">
         <p class="section-label">Fresh Off the Press</p>
         <h2 class="section-title" id="latest-heading" style="margin-bottom:2rem;">Latest Updates</h2>
         <div class="grid-3">
           <article class="card">
             <p class="card-tag">Auctions</p>
-            <h3>Spring Equipment Auction — Save the Date</h3>
-            <p>Our annual spring auction is coming up. Heavy equipment, trailers, tools, and more. Registration opens soon.</p>
-            <div class="card-meta">Posted Recently · Auctions Division</div>
-            <a href="auctions.html" class="btn btn-outline">Read More</a>
+            <h3>World Wide College of Auctioneering — Des Moines, IA</h3>
+            <p>Eight days of intensive bid calling, business education, and genuine connection at one of the top auction schools in the country.</p>
+            <div class="card-meta">March 2025 · Auctions Division</div>
+            <a href="auctions.html#auction-school-2025" class="btn btn-outline">Read More</a>
           </article>
           <article class="card">
             <p class="card-tag">Livestock</p>
@@ -346,45 +938,105 @@
       </div>
     </section>
 
-    <!-- ✦ SISTER SITE CROSS-LINK BAND -->
+    <!-- ── SISTER SITE BAND ── -->
     <div class="sister-band">
       <p class="section-label">Also From MYT</p>
       <h2>Explore Our Sister Site</h2>
-      <p class="sub">Looking for more from MYT Enterprises? Visit <strong>mytenterprisesinc.com</strong> for additional resources, insights, and updates from our extended operations.</p>
-      <a href="https://www.mytenterprisesinc.com" class="btn" rel="me" target="_blank">Visit mytenterprisesinc.com →</a>
+      <p class="sub">Looking for more from MYT Enterprises? Visit <strong>mytauctions.com</strong> for additional resources, insights, and updates from our extended operations.</p>
+      <a href="https://www.mytauctions.com" class="btn" rel="me" target="_blank">Visit mytauctions.com →</a>
     </div>
 
+    <!-- ── CONTACT BAND ── -->
     <div class="contact-band">
       <h2>Get In Touch</h2>
       <p>Questions about an auction, livestock, or a construction project? We'd love to hear from you.</p>
       <div class="contact-details">
-        <div class="contact-item">Phone<strong><a href="tel:7193304280" style="color:var(--straw);text-decoration:none;">(719) 330-4280</a></strong></div>
-        <div class="contact-item">Email<strong><a href="/cdn-cgi/l/email-protection#dfb6b1b9b09fb2a6abbab1abbaadafadb6acbaacb6b1bcf1bcb0b2" style="color:var(--straw);text-decoration:none;"><span class="__cf_email__" data-cfemail="f990979f96b994808d9c978d9c8b898b908a9c8a90979ad79a9694">[email&#160;protected]</span></a></strong></div>
-        <div class="contact-item">Location<strong>Colorado, USA</strong></div>
+        <div class="contact-item">
+          Phone
+          <strong><a href="tel:7193304280">(719) 330-4280</a></strong>
+        </div>
+        <div class="contact-item">
+          Email
+          <strong><a href="mailto:mytenterprisesinc@gmail.com">mytenterprisesinc@gmail.com</a></strong>
+        </div>
+        <div class="contact-item">
+          Location
+          <strong style="color:var(--straw);">Colorado, USA</strong>
+        </div>
       </div>
     </div>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-logo" style="display:flex;align-items:center;justify-content:center;gap:0.7rem;"><svg width="48" height="24" viewBox="0 0 78 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M56 8 L74 8 M65 8 L65 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Enterprises, LLC</span></div>
-    <p>Auctions · Livestock · Construction · Colorado</p>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="auctions.html">Auctions</a>
-      <a href="livestock.html">Livestock</a>
-      <a href="construction.html">Construction</a>
-    </nav>
-    <div class="footer-sister">
-      Sister site: <a href="https://www.mytenterprisesinc.com" rel="me" target="_blank">mytenterprisesinc.com</a>
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-brand-logo" href="index.html" aria-label="MYT Enterprises home" style="flex-direction:column;align-items:center;gap:3px;">
+          <svg width="38" height="19" viewBox="0 0 78 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M56 8 L74 8 M65 8 L65 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span style="font-family:var(--font-label);font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--tan);line-height:1;">Enterprises</span>
+        </a>
+        <p class="footer-tagline">Auctions · Livestock · Construction</p>
+        <a class="footer-contact-item" href="tel:7193304280">(719) 330-4280</a>
+        <a class="footer-contact-item" href="mailto:mytenterprisesinc@gmail.com">mytenterprisesinc@gmail.com</a>
+        <span class="footer-contact-item footer-contact-static">Colorado, USA</span>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <p class="footer-nav-label">Navigate</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="auctions.html">Auctions</a></li>
+          <li><a href="livestock.html">Livestock</a></li>
+          <li><a href="construction.html">Construction</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-right">
+        <p class="footer-sister-label">Sister Site</p>
+        <a class="footer-sister-link" href="https://www.mytauctions.com" rel="me" target="_blank">mytauctions.com →</a>
+        <div class="footer-legal">
+          <p>Honest work.</p>
+          <p>Rooted in the land.</p>
+          <p>Built to last.</p>
+        </div>
+      </div>
     </div>
-    <p style="margin-top:1.25rem;">
-      <a href="tel:7193304280" style="color:var(--tan);text-decoration:none;">(719) 330-4280</a>
-      &nbsp;&nbsp;·&nbsp;&nbsp;
-      <a href="/cdn-cgi/l/email-protection#335a5d555c735e4a47565d47564143415a4056405a5d501d505c5e" style="color:var(--tan);text-decoration:none;"><span class="__cf_email__" data-cfemail="761f181019361b0f02131802130406041f0513051f18155815191b">[email&#160;protected]</span></a>
-    </p>
-    <p style="margin-top:1rem;">© <span id="yr"></span> MYT Enterprises, LLC. All rights reserved.</p>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+      <p>© <span id="yr"></span> MYT Enterprises, LLC. All rights reserved.</p>
+      <div class="footer-bottom-divs">
+        <span>Auctions</span>
+        <span>Livestock</span>
+        <span>Construction</span>
+      </div>
+    </div>
   </footer>
 
-  <script data-cfasync="
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', function() {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
