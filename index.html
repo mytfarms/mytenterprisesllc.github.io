@@ -7,13 +7,22 @@
 
   <meta name="description" content="MYT Enterprises, LLC offers auction services, livestock sales, and construction in central Colorado. Honest work, rooted in the land." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.mytauctions.com/" />
+  <link rel="canonical" href="https://mytenterprisesinc.com/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#2C1A0E" />
+
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://www.mytauctions.com/" />
+  <meta property="og:url"         content="https://mytenterprisesinc.com/" />
   <meta property="og:title"       content="MYT Enterprises, LLC — Auctions · Livestock · Construction" />
   <meta property="og:description" content="MYT Enterprises, LLC offers auction services, livestock sales, and construction in central Colorado. Honest work, rooted in the land." />
   <meta property="og:site_name"   content="MYT Enterprises, LLC" />
   <meta property="og:locale"      content="en_US" />
+  <meta property="og:image"        content="https://mytenterprisesinc.com/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"    content="MYT Enterprises, LLC — Auctions · Livestock · Construction" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <script type="application/ld+json">
   {
@@ -21,20 +30,25 @@
     "@graph": [
       {
         "@type": ["LocalBusiness", "GeneralContractor"],
-        "@id": "https://www.mytauctions.com/#business",
+        "@id": "https://mytenterprisesinc.com/#business",
         "name": "MYT Enterprises, LLC",
-        "url": "https://www.mytauctions.com/",
+        "url": "https://mytenterprisesinc.com/",
+        "logo": "https://mytenterprisesinc.com/og-image.png",
+        "image": "https://mytenterprisesinc.com/og-image.png",
         "description": "MYT Enterprises, LLC is a multi-faceted agricultural and construction operation based in Colorado, offering auction services, livestock sales, and construction projects.",
+        "foundingDate": "2010",
         "telephone": "+17193304280",
+        "email": "mytenterprisesinc@gmail.com",
         "address": { "@type": "PostalAddress", "addressRegion": "CO", "addressCountry": "US" },
-        "areaServed": { "@type": "State", "name": "Colorado" }
+        "areaServed": { "@type": "State", "name": "Colorado" },
+        "sameAs": ["https://www.mytauctions.com/"]
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.mytauctions.com/#website",
-        "url": "https://www.mytauctions.com/",
+        "@id": "https://mytenterprisesinc.com/#website",
+        "url": "https://mytenterprisesinc.com/",
         "name": "MYT Enterprises, LLC",
-        "publisher": { "@id": "https://www.mytauctions.com/#business" }
+        "publisher": { "@id": "https://mytenterprisesinc.com/#business" }
       }
     ]
   }
@@ -42,7 +56,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     /* ── Variables ── */
@@ -55,11 +69,13 @@
       --parchment: #F5EDD8;
       --cream:     #FAF6ED;
       --rust:      #A0431F;
-      --iron:      #6B5B4E;
+      --iron:      #6B5B4E;   /* muted text on light backgrounds */
+      --dust:      #A8957F;   /* muted text on dark backgrounds (5.8:1 on soil) */
       --green:     #4a7c59;
+      --logo:      #d4a85a;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body:    'Libre Baskerville', Georgia, serif;
-      --font-label:   'Oswald', sans-serif;
+      --font-label:   'Oswald', 'Arial Narrow', sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -67,6 +83,28 @@
     img  { max-width: 100%; display: block; }
     a    { color: var(--rust); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--tan); outline-offset: 3px; }
+
+    /* ── LOGO ── */
+    .logo-mark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-mark:hover { text-decoration: none; }
+    .logo-mark svg path { stroke: var(--logo); }
+    .logo-sub {
+      font-family: var(--font-label);
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tan);
+      line-height: 1;
+    }
 
     /* ── NAV ── */
     .site-nav {
@@ -85,22 +123,6 @@
       justify-content: space-between;
       height: 68px;
     }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav-logo-text {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: var(--straw);
-      letter-spacing: -0.01em;
-      line-height: 1;
-    }
-    .nav-logo-text span { color: var(--tan); }
     .nav-links {
       list-style: none;
       display: flex;
@@ -113,7 +135,7 @@
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(232,213,163,0.75);
+      color: rgba(232,213,163,0.8);
       padding: 0.45rem 0.85rem;
       border-radius: 2px;
       transition: background 0.18s, color 0.18s;
@@ -275,7 +297,7 @@
       font-family: var(--font-body);
       font-style: italic;
       font-size: clamp(1rem, 1.8vw, 1.15rem);
-      color: rgba(232,213,163,0.7);
+      color: rgba(232,213,163,0.82);
       margin: 1.75rem 0 2.5rem;
       max-width: 420px;
       line-height: 1.65;
@@ -310,7 +332,7 @@
     }
     .btn-hero-ghost {
       background: transparent;
-      border: 2px solid rgba(196,154,108,0.4);
+      border: 2px solid rgba(196,154,108,0.5);
       color: var(--straw);
     }
     .btn-hero-ghost:hover {
@@ -326,7 +348,7 @@
       animation: fadeUp 0.65s 0.32s ease both;
     }
     .hero-stat {
-      border-left: 2px solid rgba(160,67,31,0.6);
+      border-left: 2px solid rgba(160,67,31,0.8);
       padding-left: 1rem;
     }
     .hero-stat-num {
@@ -338,15 +360,15 @@
     }
     .hero-stat-label {
       font-family: var(--font-label);
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--tan);
       margin-top: 0.2rem;
-      opacity: 0.8;
     }
+    .hero-stat--label-first .hero-stat-label { margin: 0 0 0.3rem; }
     @media (max-width: 600px) {
-      .hero { min-height: 85vh; padding: 4rem 1.25rem 5rem; align-items: flex-start; padding-top: 3.5rem; }
+      .hero { min-height: 85vh; padding: 3.5rem 1.25rem 5rem; align-items: flex-start; }
       .hero h1 { font-size: clamp(2.8rem, 14vw, 4.5rem); }
       .hero-bg-letter { display: none; }
       .hero-stats { gap: 1.5rem; margin-top: 3rem; }
@@ -360,8 +382,10 @@
 
     /* ── LAYOUT ── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
     section { padding: 4.5rem 0; }
+    .section-head-center { text-align: center; margin-bottom: 3rem; }
+    .section-head-center .section-label { justify-content: center; }
+    .section-head-center .section-sub { margin: 0 auto; }
     .section-label {
       font-family: var(--font-label);
       font-size: 0.75rem;
@@ -397,7 +421,12 @@
       line-height: 1.75;
     }
 
-    /* ── PILLAR CARDS (redesigned) ── */
+    /* color helpers for accent bars */
+    .bg-rust  { background: var(--rust); }
+    .bg-green { background: var(--green); }
+    .bg-iron  { background: var(--iron); }
+
+    /* ── PILLAR CARDS ── */
     .pillars { background: var(--parchment); padding: 5rem 0; }
     .pillars-grid {
       display: grid;
@@ -454,7 +483,6 @@
       font-weight: 700;
       color: var(--soil);
       line-height: 1.2;
-      margin-bottom: 0;
       position: relative;
       z-index: 1;
     }
@@ -479,7 +507,6 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--iron);
-      opacity: 0.7;
     }
     .pillar-cta {
       font-family: var(--font-label);
@@ -496,11 +523,9 @@
       transition: background 0.18s;
     }
     .cta-rust { background: var(--rust); color: var(--cream); }
-    .cta-rust:hover { background: var(--soil); text-decoration: none; }
     .cta-green { background: var(--green); color: var(--cream); }
-    .cta-green:hover { background: var(--soil); text-decoration: none; }
-    .cta-iron { background: var(--iron); color: var(--straw); }
-    .cta-iron:hover { background: var(--soil); text-decoration: none; }
+    .cta-iron { background: #5c4d41; color: var(--straw); }
+    .cta-rust:hover, .cta-green:hover, .cta-iron:hover { background: var(--soil); text-decoration: none; }
 
     /* ── ABOUT BAND ── */
     .about-band {
@@ -522,45 +547,21 @@
       pointer-events: none;
       line-height: 1;
     }
-    .about-inner { max-width: 700px; }
+    .about-inner { max-width: 700px; position: relative; }
     .about-band .section-label { color: var(--tan); }
     .about-band .section-label::before { background: var(--tan); }
     .about-band .section-title { color: var(--straw); }
     .about-band p {
-      color: rgba(232,213,163,0.8);
+      color: rgba(232,213,163,0.88);
       line-height: 1.85;
       margin-bottom: 1rem;
       font-size: 1rem;
     }
-    .about-band a { color: var(--tan); }
-    .about-band a:hover { color: var(--straw); }
-    .stats-row {
-      display: flex;
-      gap: 2.25rem;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
-    }
-    .stat {
-      border-left: 3px solid var(--rust);
-      padding-left: 0.9rem;
-    }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--straw);
-      line-height: 1;
-    }
-    .stat-label {
-      font-family: var(--font-label);
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--tan);
-      margin-top: 0.2rem;
-    }
+    .about-band a { color: var(--straw); text-decoration: underline; text-decoration-color: var(--tan); text-underline-offset: 3px; }
+    .about-band a:hover { color: var(--tan); }
 
-    /* ── UPDATES CARDS (redesigned) ── */
+    /* ── UPDATES CARDS ── */
+    .updates-head { margin-bottom: 2rem; }
     .updates-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -577,6 +578,39 @@
     }
     .update-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,26,14,0.13); }
     .update-card-color-bar { height: 4px; width: 100%; }
+    .update-card-photo {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--bark);
+    }
+    .update-card-photo--text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 45%, rgba(160,67,31,0.35) 0%, transparent 70%),
+        var(--soil);
+      text-align: center;
+      padding: 1rem;
+    }
+    .ucp-big {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.9rem;
+      line-height: 1.1;
+      color: var(--straw);
+    }
+    .ucp-small {
+      font-family: var(--font-label);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--tan);
+    }
     .update-card-inner {
       padding: 1.25rem 1.25rem 1rem;
       flex: 1;
@@ -587,7 +621,7 @@
       display: inline-flex;
       align-items: center;
       font-family: var(--font-label);
-      font-size: 0.63rem;
+      font-size: 0.65rem;
       font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -597,8 +631,8 @@
       align-self: flex-start;
     }
     .badge-rust { background: rgba(160,67,31,0.12); color: var(--rust); }
-    .badge-green { background: rgba(74,124,89,0.12); color: var(--green); }
-    .badge-iron { background: rgba(107,91,78,0.15); color: var(--iron); }
+    .badge-green { background: rgba(74,124,89,0.14); color: #3b6448; }
+    .badge-iron { background: rgba(107,91,78,0.15); color: #54473d; }
     .update-card h3 {
       font-family: var(--font-display);
       font-size: 1.05rem;
@@ -622,15 +656,14 @@
     }
     .update-meta {
       font-family: var(--font-label);
-      font-size: 0.65rem;
+      font-size: 0.68rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--saddle);
-      opacity: 0.8;
     }
     .update-link {
       font-family: var(--font-label);
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -656,12 +689,6 @@
       text-decoration: none;
     }
     .btn:hover { background: var(--soil); transform: translateY(-1px); text-decoration: none; }
-    .btn-outline {
-      background: transparent;
-      color: var(--rust);
-      border: 1.5px solid var(--rust);
-    }
-    .btn-outline:hover { background: var(--rust); color: var(--cream); }
 
     /* ── SISTER BAND ── */
     .sister-band {
@@ -700,12 +727,10 @@
       margin-bottom: 0.75rem;
     }
     .contact-band > p {
-      color: rgba(196,154,108,0.85);
+      color: var(--tan);
       font-size: 0.95rem;
-      margin-bottom: 2rem;
+      margin: 0 auto 2rem;
       max-width: 460px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .contact-details {
       display: flex;
@@ -718,13 +743,15 @@
       font-size: 0.75rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--iron);
+      color: var(--dust);
     }
     .contact-item strong {
       display: block;
       margin-top: 0.3rem;
       font-size: 0.95rem;
       letter-spacing: 0.04em;
+      color: var(--straw);
+      overflow-wrap: anywhere;
     }
     .contact-item a { color: var(--straw); text-decoration: none; transition: color 0.18s; }
     .contact-item a:hover { color: var(--tan); }
@@ -743,25 +770,13 @@
       gap: 2.5rem;
       align-items: start;
     }
-    .footer-brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.6rem;
-      text-decoration: none;
-    }
-    .footer-brand-name {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: var(--straw);
-    }
+    .footer-brand .logo-mark { align-items: flex-start; margin-bottom: 0.6rem; }
     .footer-tagline {
       font-family: var(--font-label);
       font-size: 0.7rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--iron);
+      color: var(--dust);
       margin-bottom: 1rem;
     }
     .footer-contact-item {
@@ -775,37 +790,31 @@
       transition: color 0.18s;
     }
     .footer-contact-item:hover { color: var(--straw); }
-    .footer-contact-static { color: var(--iron); cursor: default; }
+    .footer-contact-static { color: var(--dust); cursor: default; }
     .footer-nav { text-align: center; }
-    .footer-nav-label {
+    .footer-nav-label,
+    .footer-sister-label {
       font-family: var(--font-label);
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--iron);
+      color: var(--dust);
       margin-bottom: 0.85rem;
     }
+    .footer-sister-label { margin-bottom: 0.5rem; }
     .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.2rem; align-items: center; }
     .footer-nav a {
       font-family: var(--font-label);
       font-size: 0.8rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(232,213,163,0.6);
+      color: rgba(232,213,163,0.8);
       text-decoration: none;
       transition: color 0.18s;
       padding: 0.15rem 0;
     }
     .footer-nav a:hover { color: var(--tan); }
     .footer-right { text-align: right; }
-    .footer-sister-label {
-      font-family: var(--font-label);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--iron);
-      margin-bottom: 0.5rem;
-    }
     .footer-sister-link {
       display: inline-block;
       font-family: var(--font-label);
@@ -824,14 +833,14 @@
       font-size: 0.7rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--iron);
+      color: var(--dust);
       line-height: 2;
     }
     .footer-divider {
       max-width: 1100px;
       margin: 1.75rem auto 0;
       border: none;
-      border-top: 1px solid rgba(196,154,108,0.18);
+      border-top: 1px solid rgba(196,154,108,0.25);
     }
     .footer-bottom {
       max-width: 1100px;
@@ -842,34 +851,33 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    .footer-bottom p {
+    .footer-bottom p,
+    .footer-bottom-divs span {
       font-family: var(--font-label);
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--iron);
+      color: var(--dust);
     }
     .footer-bottom-divs { display: flex; gap: 1.25rem; }
-    .footer-bottom-divs span {
-      font-family: var(--font-label);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(107,91,78,0.55);
-    }
 
     @media (max-width: 720px) {
       .footer-inner { grid-template-columns: 1fr; text-align: center; }
-      .footer-brand-logo { justify-content: center; }
+      .footer-brand .logo-mark { align-items: center; }
       .footer-right { text-align: center; }
       .footer-bottom { justify-content: center; text-align: center; }
       .footer-bottom-divs { justify-content: center; }
-      .footer-contact-item { text-align: center; }
     }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .pillar:hover, .update-card:hover, .btn:hover, .btn-hero:hover { transform: none; }
     }
   </style>
 </head>
@@ -878,18 +886,18 @@
   <!-- ── NAV ── -->
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a class="nav-logo" href="index.html" aria-label="MYT Enterprises home" style="flex-direction:column;gap:3px;">
+      <a class="logo-mark" href="index.html" aria-label="MYT Enterprises home">
         <svg width="48" height="24" viewBox="0 0 78 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M56 8 L74 8 M65 8 L65 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M56 8 L74 8 M65 8 L65 32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
-        <span style="font-family:var(--font-label);font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--tan);line-height:1;">Enterprises</span>
+        <span class="logo-sub">Enterprises</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="navLinks" role="list">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="auctions.html">Auctions</a></li>
@@ -902,7 +910,7 @@
   <main>
 
     <!-- ── HERO ── -->
-    <section class="hero" aria-label="Hero">
+    <section class="hero" aria-label="Introduction">
       <div class="hero-bg-letter" aria-hidden="true">M</div>
       <div class="hero-rule" aria-hidden="true"></div>
       <div class="hero-content">
@@ -910,7 +918,7 @@
         <h1>Built on<br><em>Grit &amp;</em><br>Hard Work.</h1>
         <p class="hero-tagline">Auctions, livestock, and construction services you can count on — rooted in the land and built to last.</p>
         <div class="hero-cta-row">
-          <a href="https://www.mytauctions.com" class="btn-hero" target="_blank" rel="me">View Auctions</a>
+          <a href="https://www.mytauctions.com" class="btn-hero" target="_blank" rel="noopener">View Auctions</a>
           <a href="#services" class="btn-hero btn-hero-ghost">Our Services</a>
         </div>
         <div class="hero-stats">
@@ -918,13 +926,13 @@
             <div class="hero-stat-num">3</div>
             <div class="hero-stat-label">Divisions</div>
           </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">100%</div>
-            <div class="hero-stat-label">Hands-On</div>
+          <div class="hero-stat hero-stat--label-first">
+            <div class="hero-stat-label">Established</div>
+            <div class="hero-stat-num">2010</div>
           </div>
-          <div class="hero-stat">
+          <div class="hero-stat hero-stat--label-first">
+            <div class="hero-stat-label">Rooted in</div>
             <div class="hero-stat-num">CO</div>
-            <div class="hero-stat-label">Rooted Here</div>
           </div>
         </div>
       </div>
@@ -935,17 +943,17 @@
     <!-- ── SERVICES / PILLARS ── -->
     <section class="pillars" id="services" aria-labelledby="services-heading">
       <div class="container">
-        <div style="text-align:center; margin-bottom:3rem;">
-          <p class="section-label" style="justify-content:center;">What We Do</p>
+        <div class="section-head-center">
+          <p class="section-label">What We Do</p>
           <h2 class="section-title" id="services-heading">Three Ways We Serve You</h2>
-          <p class="section-sub" style="margin:0 auto;">Whether you're buying at auction, sourcing quality livestock, or breaking ground on a new build — MYT Enterprises has the experience and drive to get it done right.</p>
+          <p class="section-sub">Whether you're buying at auction, sourcing quality livestock, or breaking ground on a new build — MYT Enterprises has the experience and drive to get it done right.</p>
         </div>
         <div class="pillars-grid">
 
           <article class="pillar">
             <div class="pillar-header">
-              <div class="pillar-num">01</div>
-              <div class="pillar-accent" style="background:var(--rust);"></div>
+              <div class="pillar-num" aria-hidden="true">01</div>
+              <div class="pillar-accent bg-rust"></div>
               <h3>Auction Services</h3>
             </div>
             <div class="pillar-body">
@@ -959,8 +967,8 @@
 
           <article class="pillar">
             <div class="pillar-header">
-              <div class="pillar-num">02</div>
-              <div class="pillar-accent" style="background:var(--green);"></div>
+              <div class="pillar-num" aria-hidden="true">02</div>
+              <div class="pillar-accent bg-green"></div>
               <h3>Regenerative Ranching</h3>
             </div>
             <div class="pillar-body">
@@ -974,8 +982,8 @@
 
           <article class="pillar">
             <div class="pillar-header">
-              <div class="pillar-num">03</div>
-              <div class="pillar-accent" style="background:var(--iron);"></div>
+              <div class="pillar-num" aria-hidden="true">03</div>
+              <div class="pillar-accent bg-iron"></div>
               <h3>Front Range Construction</h3>
             </div>
             <div class="pillar-body">
@@ -997,61 +1005,63 @@
         <div class="about-inner">
           <p class="section-label">About MYT Enterprises</p>
           <h2 class="section-title" id="about-heading">Who We Are</h2>
-          <p>MYT Enterprises, LLC is a multi-faceted operation rooted in hard work, integrity, and a deep respect for the land and the people we serve. We've built our reputation one handshake at a time — in the auction ring, out in the pasture, and on the job site — right here in Colorado.</p>
-          <p>This site is your window into what we're doing day to day. Browse auction listings, follow our livestock updates, and track our construction projects — all in one place.</p>
-          <p>Want to go deeper? Visit our sister site at <a href="https://www.mytauctions.com" rel="me" style="font-family:var(--font-label);font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;">mytauctions.com</a> for more.</p>
-          <div class="stats-row">
-            <div class="stat"><div class="stat-num">3</div><div class="stat-label">Divisions</div></div>
-            <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Hands-On</div></div>
-            <div class="stat"><div class="stat-num">LLC</div><div class="stat-label">Established</div></div>
-          </div>
+          <p>MYT Enterprises, LLC is a multi-faceted operation rooted in hard work, integrity, and a deep respect for the land and the people we serve. Since 2010 we've built our reputation one handshake at a time — in the auction ring, out in the pasture, and on the job site — right here in Colorado.</p>
+          <p>This site is your window into what we're doing day to day. Follow our auction work, livestock updates, and construction projects — all in one place.</p>
+          <p>For upcoming sales and auction listings, visit our sister site, <a href="https://www.mytauctions.com" target="_blank" rel="noopener">mytauctions.com</a>.</p>
         </div>
       </div>
     </section>
 
     <!-- ── LATEST UPDATES ── -->
+    <!-- Newest post from each section page. When you add a post, update its card here. -->
     <section aria-labelledby="latest-heading">
       <div class="container">
         <p class="section-label">Fresh Off the Press</p>
-        <h2 class="section-title" id="latest-heading" style="margin-bottom:2rem;">Latest Updates</h2>
+        <h2 class="section-title updates-head" id="latest-heading">Latest Updates</h2>
         <div class="updates-grid">
 
           <article class="update-card">
-            <div class="update-card-color-bar" style="background:var(--rust);"></div>
+            <div class="update-card-color-bar bg-rust"></div>
+            <div class="update-card-photo update-card-photo--text" aria-hidden="true">
+              <span class="ucp-big">Auction School</span>
+              <span class="ucp-small">Des Moines, Iowa</span>
+            </div>
             <div class="update-card-inner">
               <span class="update-badge badge-rust">Auctions</span>
               <h3>World Wide College of Auctioneering — Des Moines, IA</h3>
               <p>Eight days of intensive bid calling, business education, and genuine connection at one of the top auction schools in the country.</p>
             </div>
             <div class="update-card-footer">
-              <span class="update-meta">March 2025 · Auctions Division</span>
+              <span class="update-meta">March 2025 · Auctions</span>
               <a href="auctions.html#auction-school-2025" class="update-link">Read More →</a>
             </div>
           </article>
 
           <article class="update-card">
-            <div class="update-card-color-bar" style="background:var(--green);"></div>
+            <div class="update-card-color-bar bg-green"></div>
+            <img class="update-card-photo" src="thumbs/calves-spring-2026.jpg" width="800" height="600" alt="Hereford cow with her newborn calf in a Colorado pasture, Pikes Peak behind" loading="lazy" />
             <div class="update-card-inner">
               <span class="update-badge badge-green">Livestock</span>
-              <h3>New Calves Hit the Ground</h3>
-              <p>Check back soon for new calf photos!</p>
+              <h3>Rain on the Way — A Few Calves Worth Bragging About</h3>
+              <p>Calving season has been good to us. The cows have done their jobs, the calves are hitting the ground healthy, and moisture is finally on the way.</p>
             </div>
             <div class="update-card-footer">
-              <span class="update-meta">Posted Recently · Livestock Division</span>
-              <a href="livestock.html" class="update-link">Read More →</a>
+              <span class="update-meta">Spring 2026 · Livestock</span>
+              <a href="livestock.html#spring-update-2025" class="update-link">Read More →</a>
             </div>
           </article>
 
           <article class="update-card">
-            <div class="update-card-color-bar" style="background:var(--iron);"></div>
+            <div class="update-card-color-bar bg-iron"></div>
+            <img class="update-card-photo" src="thumbs/trusses-winter-2025.jpg" width="800" height="600" alt="Crane truck setting roof trusses on a new home along the Front Range" loading="lazy" />
             <div class="update-card-inner">
               <span class="update-badge badge-iron">Construction</span>
-              <h3>Pole Barn Project: Foundation Complete</h3>
-              <p>Check back soon for project updates!</p>
+              <h3>From the Cab — Winter Work on the Front Range</h3>
+              <p>Cold mornings, clear skies, and honest work: new home construction across the Front Range, from foundation to framing to truss setting.</p>
             </div>
             <div class="update-card-footer">
-              <span class="update-meta">Posted Recently · Construction Division</span>
-              <a href="construction.html" class="update-link">Read More →</a>
+              <span class="update-meta">Winter 2025 · Construction</span>
+              <a href="construction.html#winter-work-2025" class="update-link">Read More →</a>
             </div>
           </article>
 
@@ -1060,21 +1070,21 @@
     </section>
 
     <!-- ── SISTER SITE BAND ── -->
-    <div class="sister-band">
+    <section class="sister-band" aria-labelledby="sister-heading">
       <p class="section-label">Also From MYT</p>
-      <h2>Explore Our Sister Site</h2>
+      <h2 id="sister-heading">Explore Our Sister Site</h2>
       <p class="sub">Looking for more from MYT Enterprises? Visit <strong>mytauctions.com</strong> for additional resources, insights, and updates from our extended operations.</p>
-      <a href="https://www.mytauctions.com" class="btn" rel="me" target="_blank">Visit mytauctions.com →</a>
-    </div>
+      <a href="https://www.mytauctions.com" class="btn" target="_blank" rel="noopener">Visit mytauctions.com →</a>
+    </section>
 
     <!-- ── CONTACT BAND ── -->
-    <div class="contact-band">
-      <h2>Get In Touch</h2>
+    <section class="contact-band" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get In Touch</h2>
       <p>Questions about an auction, livestock, or a construction project? We'd love to hear from you.</p>
       <div class="contact-details">
         <div class="contact-item">
           Phone
-          <strong><a href="tel:7193304280">(719) 330-4280</a></strong>
+          <strong><a href="tel:+17193304280">(719) 330-4280</a></strong>
         </div>
         <div class="contact-item">
           Email
@@ -1082,27 +1092,27 @@
         </div>
         <div class="contact-item">
           Location
-          <strong style="color:var(--straw);">Colorado, USA</strong>
+          <strong>Colorado, USA</strong>
         </div>
       </div>
-    </div>
+    </section>
 
   </main>
 
   <!-- ── FOOTER ── -->
-  <footer class="site-footer" aria-label="Site footer">
+  <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a class="footer-brand-logo" href="index.html" aria-label="MYT Enterprises home" style="flex-direction:column;align-items:center;gap:3px;">
+        <a class="logo-mark" href="index.html" aria-label="MYT Enterprises home">
           <svg width="38" height="19" viewBox="0 0 78 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M56 8 L74 8 M65 8 L65 32" stroke="#d4a85a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M4 32 L4 10 Q4 8 6 8 Q9 8 13 30 Q17 8 20 8 Q22 8 22 10 L22 32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M30 8 L39 20 L48 8 M39 20 L39 32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M56 8 L74 8 M65 8 L65 32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
-          <span style="font-family:var(--font-label);font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--tan);line-height:1;">Enterprises</span>
+          <span class="logo-sub">Enterprises</span>
         </a>
         <p class="footer-tagline">Auctions · Livestock · Construction</p>
-        <a class="footer-contact-item" href="tel:7193304280">(719) 330-4280</a>
+        <a class="footer-contact-item" href="tel:+17193304280">(719) 330-4280</a>
         <a class="footer-contact-item" href="mailto:mytenterprisesinc@gmail.com">mytenterprisesinc@gmail.com</a>
         <span class="footer-contact-item footer-contact-static">Colorado, USA</span>
       </div>
@@ -1120,7 +1130,7 @@
 
       <div class="footer-right">
         <p class="footer-sister-label">Sister Site</p>
-        <a class="footer-sister-link" href="https://www.mytauctions.com" rel="me" target="_blank">mytauctions.com →</a>
+        <a class="footer-sister-link" href="https://www.mytauctions.com" target="_blank" rel="noopener">mytauctions.com →</a>
         <div class="footer-legal">
           <p>Honest work.</p>
           <p>Rooted in the land.</p>
@@ -1132,7 +1142,7 @@
     <hr class="footer-divider" />
 
     <div class="footer-bottom">
-      <p>© <span id="yr"></span> MYT Enterprises, LLC. All rights reserved.</p>
+      <p>© <span id="yr">2026</span> MYT Enterprises, LLC · Established 2010. All rights reserved.</p>
       <div class="footer-bottom-divs">
         <span>Auctions</span>
         <span>Livestock</span>
@@ -1144,18 +1154,14 @@
   <script>
     const toggle = document.getElementById('navToggle');
     const links  = document.getElementById('navLinks');
-    toggle.addEventListener('click', function() {
-      const open = links.classList.toggle('open');
+    function setMenu(open) {
+      links.classList.toggle('open', open);
       toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open);
-    });
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', false);
-      });
-    });
+      toggle.setAttribute('aria-expanded', String(open));
+    }
+    toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 
